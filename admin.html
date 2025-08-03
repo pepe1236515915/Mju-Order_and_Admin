@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ระบบจัดการสต๊อกสินค้า - Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-green-50 to-teal-100 text-gray-900 font-sans min-h-screen flex flex-col">
+
+  <main class="max-w-4xl mx-auto p-8 bg-white rounded-3xl shadow-2xl my-12">
+    <h1 class="text-4xl font-extrabold mb-8 text-center text-emerald-700">📦 ระบบจัดการสต๊อกสินค้า (Admin)</h1>
+
+    <form class="space-y-10" method="post" action="/admin/save-stock" novalidate>
+      
+      <!-- เสื้อ -->
+      <fieldset class="border-4 border-emerald-400 rounded-2xl p-8 bg-emerald-50">
+        <legend class="text-2xl font-semibold px-4 text-emerald-700 flex items-center gap-2">👕 เสื้อ</legend>
+
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-6 mt-6">
+          <input type="number" name="stock_shirt_s" placeholder="S (จำนวนชิ้น)" min="0" step="1" required
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+          <input type="number" name="stock_shirt_m" placeholder="M (จำนวนชิ้น)" min="0" step="1" required
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+          <input type="number" name="stock_shirt_l" placeholder="L (จำนวนชิ้น)" min="0" step="1" required
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+          <input type="number" name="stock_shirt_xl" placeholder="XL (จำนวนชิ้น)" min="0" step="1" required
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+          <input type="number" name="stock_shirt_xxl" placeholder="XXL (จำนวนชิ้น)" min="0" step="1" required
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+        </div>
+
+        <div class="mt-6">
+          <label for="shirt_color" class="block mb-2 font-medium text-emerald-700">🎨 สีเสื้อ</label>
+          <input type="text" id="shirt_color" name="shirt_color" placeholder="เช่น ขาว, เทา, น้ำเงิน" required
+            class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+        </div>
+
+        <div class="mt-6">
+          <label for="shirt_price" class="block mb-2 font-medium text-emerald-700">💰 ราคาตัวละ (บาท)</label>
+          <input type="number" id="shirt_price" name="shirt_price" min="0" step="0.01" placeholder="เช่น 250.00" required
+            class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+        </div>
+
+        <div class="mt-6">
+          <label for="shirt_img" class="block mb-2 font-medium text-emerald-700">🖼️ รูปภาพเสื้อ (URL)</label>
+          <input type="url" id="shirt_img" name="shirt_img" placeholder="ใส่ลิงก์รูปภาพ" required
+            class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+        </div>
+      </fieldset>
+
+      <!-- กระเป๋า -->
+      <fieldset class="border-4 border-teal-400 rounded-2xl p-8 bg-teal-50">
+        <legend class="text-2xl font-semibold px-4 text-teal-700 flex items-center gap-2">👜 กระเป๋า</legend>
+
+        <input type="number" name="stock_bag" placeholder="จำนวนในสต๊อก (ชิ้น)" min="0" step="1" required
+          class="w-full p-4 rounded-lg border border-teal-300 mb-4 focus:ring-2 focus:ring-teal-500" />
+        <input type="number" name="price_bag" placeholder="ราคาต่อใบ (บาท)" min="0" step="0.01" required
+          class="w-full p-4 rounded-lg border border-teal-300 mb-4 focus:ring-2 focus:ring-teal-500" />
+        <input type="url" name="img_bag" placeholder="URL รูปภาพกระเป๋า" required
+          class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500" />
+      </fieldset>
+
+      <!-- แก้ว -->
+      <fieldset class="border-4 border-teal-400 rounded-2xl p-8 bg-teal-50">
+        <legend class="text-2xl font-semibold px-4 text-teal-700 flex items-center gap-2">🥤 แก้ว</legend>
+
+        <input type="number" name="stock_cup" placeholder="จำนวนในสต๊อก (ชิ้น)" min="0" step="1" required
+          class="w-full p-4 rounded-lg border border-teal-300 mb-4 focus:ring-2 focus:ring-teal-500" />
+        <input type="number" name="price_cup" placeholder="ราคาต่อใบ (บาท)" min="0" step="0.01" required
+          class="w-full p-4 rounded-lg border border-teal-300 mb-4 focus:ring-2 focus:ring-teal-500" />
+        <input type="url" name="img_cup" placeholder="URL รูปภาพแก้ว" required
+          class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500" />
+      </fieldset>
+
+      <!-- อื่น ๆ -->
+      <fieldset class="border-4 border-emerald-300 rounded-2xl p-8 bg-white">
+        <legend class="text-2xl font-semibold px-4 text-emerald-600 flex items-center gap-2">🎁 สินค้าอื่น ๆ</legend>
+
+        <!-- หมวก -->
+        <div class="mb-6">
+          <label for="stock_hat_qty" class="block mb-2 text-emerald-700">🧢 หมวก (จำนวนในสต๊อก)</label>
+          <input type="number" id="stock_hat_qty" name="stock_hat_qty" min="0" step="1" required placeholder="จำนวนใบ"
+            class="w-full p-4 rounded-lg border border-emerald-300 mb-3 focus:ring-2 focus:ring-emerald-500" />
+          <input type="text" id="stock_hat_detail" name="stock_hat_detail" placeholder="รายละเอียด เช่น มีปีก/ไม่มีปีก"
+            class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+        </div>
+
+        <!-- ร่ม -->
+        <div class="mb-6">
+          <label for="stock_umbrella_qty" class="block mb-2 text-emerald-700">🌂 ร่ม (จำนวนในสต๊อก)</label>
+          <input type="number" id="stock_umbrella_qty" name="stock_umbrella_qty" min="0" step="1" required placeholder="จำนวนคัน"
+            class="w-full p-4 rounded-lg border border-emerald-300 mb-3 focus:ring-2 focus:ring-emerald-500" />
+          <input type="text" id="stock_umbrella_detail" name="stock_umbrella_detail" placeholder="รายละเอียด เช่น พับได้ / ยาว"
+            class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+        </div>
+
+        <!-- ปากกา -->
+        <div>
+          <label for="stock_pen_qty" class="block mb-2 text-emerald-700">🖊️ ปากกา (จำนวนในสต๊อก)</label>
+          <input type="number" id="stock_pen_qty" name="stock_pen_qty" min="0" step="1" required placeholder="จำนวนด้าม"
+            class="w-full p-4 rounded-lg border border-emerald-300 mb-3 focus:ring-2 focus:ring-emerald-500" />
+          <input type="text" id="stock_pen_detail" name="stock_pen_detail" placeholder="รายละเอียด เช่น ด้ามหมึกน้ำเงิน"
+            class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500" />
+        </div>
+      </fieldset>
+
+      <!-- ปุ่มบันทึกและรีเซ็ต -->
+      <div class="text-center mt-10 flex justify-center gap-6">
+        <button type="reset"
+          class="px-8 py-3 bg-gray-300 text-gray-700 rounded-xl hover:bg-gray-400 transition font-bold shadow-md">💥 เคลียร์ข้อมูล</button>
+        <button type="submit"
+          class="px-8 py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 transition font-bold shadow-md">💾 บันทึกข้อมูลสต๊อก</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

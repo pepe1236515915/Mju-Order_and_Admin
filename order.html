@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ฟอร์มสั่งซื้อของที่ระลึก 30 ปี วิทยาการคอมพิวเตอร์</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Sarabun', sans-serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-green-50 to-teal-100 text-gray-900 min-h-screen flex flex-col">
+
+  <main class="max-w-4xl mx-auto p-8 bg-white rounded-3xl shadow-2xl my-12">
+    <h1 class="text-4xl font-extrabold mb-10 text-center text-emerald-700">🛒 ฟอร์มสั่งซื้อของที่ระลึก 30 ปี วิทยาการคอมพิวเตอร์</h1>
+
+    <!-- ตัวอย่างสินค้า -->
+    <section class="mb-10 border-4 border-teal-400 rounded-2xl p-6 bg-teal-50">
+  <h2 class="text-2xl font-semibold text-teal-700 mb-6">📸 ตัวอย่างสินค้า</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+    <div class="flex flex-col items-center">
+      <img src="img/shirt.png" alt="เสื้อ"
+           class="rounded-lg shadow-md w-full aspect-[4/3] object-cover border-4 border-teal-500" />
+      <p class="mt-2 font-medium text-center text-teal-800">เสื้อ</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="img/bag.jpg" alt="กระเป๋า"
+           class="rounded-lg shadow-md w-full aspect-[4/3] object-cover border-4 border-teal-500" />
+      <p class="mt-2 font-medium text-center text-teal-800">กระเป๋า</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="img/glass.jpg" alt="แก้ว"
+           class="rounded-lg shadow-md w-full aspect-[4/3] object-cover border-4 border-teal-500" />
+      <p class="mt-2 font-medium text-center text-teal-800">แก้ว</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="img/gap.jpg" alt="หมวก"
+           class="rounded-lg shadow-md w-full aspect-[4/3] object-cover border-4 border-teal-500" />
+      <p class="mt-2 font-medium text-center text-teal-800">หมวก</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="img/um.jpg" alt="ร่ม"
+           class="rounded-lg shadow-md w-full aspect-[4/3] object-cover border-4 border-teal-500" />
+      <p class="mt-2 font-medium text-center text-teal-800">ร่ม</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="img/pen.jpg" alt="ปากกา"
+           class="rounded-lg shadow-md w-full aspect-[4/3] object-cover border-4 border-teal-500" />
+      <p class="mt-2 font-medium text-center text-teal-800">ปากกา</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="img/pin.jpg" alt="เข็มกลัด"
+           class="rounded-lg shadow-md w-full aspect-[4/3] object-cover border-4 border-teal-500" />
+      <p class="mt-2 font-medium text-center text-teal-800">เข็มกลัด</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="img/book.jpg" alt="สมุด"
+           class="rounded-lg shadow-md w-full aspect-[4/3] object-cover border-4 border-teal-500" />
+      <p class="mt-2 font-medium text-center text-teal-800">สมุด</p>
+    </div>
+  </div>
+</section>
+
+
+    <form class="space-y-10" novalidate>
+      <!-- ข้อมูลลูกค้า -->
+      <fieldset class="border-4 border-emerald-400 rounded-2xl p-8 bg-emerald-50">
+        <legend class="text-2xl font-semibold px-4 text-emerald-700">👤 ข้อมูลลูกค้า</legend>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          <label for="fullname" class="sr-only">ชื่อ-นามสกุล</label>
+          <input type="text" id="fullname" name="fullname" placeholder="ชื่อ-นามสกุล" required
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
+
+          <label for="phone" class="sr-only">เบอร์โทรศัพท์</label>
+          <input type="tel" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" required
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
+
+          <label for="email" class="sr-only">อีเมล</label>
+          <input type="email" id="email" name="email" placeholder="อีเมล"
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
+
+          <label for="address" class="sr-only">ที่อยู่จัดส่ง</label>
+          <textarea id="address" name="address" rows="4" placeholder="ที่อยู่จัดส่ง" required
+            class="p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none resize-none"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- สินค้า -->
+      <fieldset class="border-4 border-teal-400 rounded-2xl p-8 bg-teal-50">
+        <legend class="text-2xl font-semibold px-4 text-teal-700">🛍️ เลือกรายการสินค้า</legend>
+
+        <!-- เสื้อ -->
+        <div class="mb-6 max-w-xs">
+          <label for="shirt_size" class="block mb-2 font-medium text-teal-700">👕 เสื้อ</label>
+          <select id="shirt_size" name="shirt_size"
+            class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+            <option value="">เลือกไซส์</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <input type="number" name="shirt_qty" min="0" placeholder="จำนวนตัว"
+            class="w-full p-4 mt-3 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+        </div>
+
+        <!-- กระเป๋า -->
+        <div class="mb-6 max-w-xs">
+          <label for="bag_qty" class="block mb-2 font-medium text-teal-700">👜 กระเป๋า</label>
+          <input type="number" id="bag_qty" name="bag_qty" min="0" placeholder="จำนวนใบ"
+            class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+        </div>
+
+        <!-- แก้ว -->
+        <div class="mb-6 max-w-xs">
+          <label for="cup_qty" class="block mb-2 font-medium text-teal-700">🥤 แก้ว</label>
+          <input type="number" id="cup_qty" name="cup_qty" min="0" placeholder="จำนวนใบ"
+            class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+        </div>
+
+        <!-- สินค้าอื่น ๆ -->
+        <div class="mt-8">
+          <h3 class="text-xl font-semibold mb-6 text-teal-700">🎁 สินค้าอื่น ๆ</h3>
+
+          <!-- หมวก -->
+          <div class="mb-6 max-w-sm">
+            <label for="hat_qty" class="block mb-2 font-medium text-teal-700">🧢 หมวก</label>
+            <input type="number" id="hat_qty" name="hat_qty" min="0" placeholder="จำนวนใบ"
+              class="w-full p-4 mb-2 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+            <select id="hat_type" name="hat_type"
+              class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+              <option value="">เลือกประเภทหมวก</option>
+              <option value="มีปีก">มีปีก</option>
+              <option value="ไม่มีปีก">ไม่มีปีก</option>
+            </select>
+          </div>
+
+          <!-- ร่ม -->
+          <div class="mb-6 max-w-sm">
+            <label for="umbrella_qty" class="block mb-2 font-medium text-teal-700">🌂 ร่ม</label>
+            <input type="number" id="umbrella_qty" name="umbrella_qty" min="0" placeholder="จำนวนคัน"
+              class="w-full p-4 mb-2 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+            <select id="umbrella_type" name="umbrella_type"
+              class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+              <option value="">เลือกประเภทร่ม</option>
+              <option value="พับได้">พับได้</option>
+              <option value="ยาว">ยาว</option>
+            </select>
+          </div>
+
+          <!-- ปากกา -->
+          <div class="mb-6 max-w-sm">
+            <label for="pen_qty" class="block mb-2 font-medium text-teal-700">🖊️ ปากกา</label>
+            <input type="number" id="pen_qty" name="pen_qty" min="0" placeholder="จำนวนด้าม"
+              class="w-full p-4 mb-2 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+            <select id="pen_color" name="pen_color"
+              class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+              <option value="">เลือกสีหมึก</option>
+              <option value="ดำ">ดำ</option>
+              <option value="น้ำเงิน">น้ำเงิน</option>
+              <option value="แดง">แดง</option>
+            </select>
+          </div>
+
+          <!-- เข็มกลัด -->
+          <div class="mb-6 max-w-sm">
+            <label for="pin_qty" class="block mb-2 font-medium text-teal-700">📌 เข็มกลัด</label>
+            <input type="number" id="pin_qty" name="pin_qty" min="0" placeholder="จำนวนอัน"
+              class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+          </div>
+
+          <!-- สมุด -->
+          <div class="max-w-sm">
+            <label for="notebook_qty" class="block mb-2 font-medium text-teal-700">📔 สมุด</label>
+            <input type="number" id="notebook_qty" name="notebook_qty" min="0" placeholder="จำนวนเล่ม"
+              class="w-full p-4 rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- แนบสลิป -->
+      <fieldset class="border-4 border-emerald-400 rounded-2xl p-8 bg-emerald-50 max-w-md mx-auto">
+        <legend class="text-2xl font-semibold px-4 text-emerald-700">📎 แนบสลิปและข้อมูลการสั่งซื้อ</legend>
+        <input type="file" name="slip" accept="image/*" required
+          class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500 mt-6 mb-6 focus:outline-none" />
+        <input type="date" name="purchase_date"
+          class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500 mb-6 focus:outline-none" />
+
+        <label for="delivery_method" class="block mb-2 font-medium text-emerald-700">🚚 การจัดส่ง</label>
+        <select id="delivery_method" name="delivery_method"
+          class="w-full p-4 mb-6 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          <option value="">เลือก</option>
+          <option value="delivery">จัดส่ง</option>
+          <option value="pickup">รับเอง</option>
+        </select>
+
+        <label for="payment_method" class="block mb-2 font-medium text-emerald-700">💳 ช่องทางชำระเงิน</label>
+        <select id="payment_method" name="payment_method"
+          class="w-full p-4 rounded-lg border border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          <option value="">เลือก</option>
+          <option value="bank_transfer">โอนผ่านธนาคาร</option>
+          <option value="cash_on_delivery">เก็บเงินปลายทาง</option>
+        </select>
+      </fieldset>
+
+      <div class="text-center flex justify-center gap-6 mt-8">
+        <button type="reset"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-4 px-12 rounded-xl shadow-md transition duration-300">
+          🧹 เคลียร์ข้อมูล
+        </button>
+        <button type="submit"
+          class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-12 rounded-xl shadow-md transition duration-300">
+          📨 ส่งคำสั่งซื้อ
+        </button>
+      </div>
+    </form>
+  </main>
+
+</body>
+</html>
